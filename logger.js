@@ -12,7 +12,7 @@ var keys = []
 
 if(min == -1) //TEMP CODE TO CLEAR STORAGE WHILE I'M TESTING STUFF
 {
-  clearStorage()
+  browser.storage.sync.set({data: []});
 }
 
 var result = browser.storage.sync.get("data")
@@ -32,7 +32,7 @@ function loadData(result)
 
   if(url.includes(".com") || url.includes(".org")) //because this extensions also counts its own webpage as a site
   {
-    var temp = [url.replace("www.", ""), minuteTime]
+    var temp = [url.replace("www.", "").replace(".com","").replace(".org",""), minuteTime]
     data.push(temp)
   }
   //console.log(url)
@@ -99,11 +99,6 @@ function formatData()
   //console.log(urlNames)
 }
 
-function clearStorage()
-{
-  browser.storage.sync.set({data: []});
-}
-
 window.onload = function() {
   result = browser.storage.sync.get("data")
   result.then(loadData, error)
@@ -119,7 +114,6 @@ function graph()
     tempArray.push([keys[i], urlNames[keys[i]]])
   }
   //console.log(tempArray)
-
   width = 400
   height = 400
 
@@ -128,7 +122,6 @@ function graph()
     .append('style')
     .attr('type', 'text/css')
     .text("@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300');")
-
 
   svg = d3.select("#graphArea")
   .append("svg")

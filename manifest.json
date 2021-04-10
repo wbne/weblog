@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "weblog",
-  "version": "0.1",
+  "version": "1.0",
 
   "description": "tool to visualize website usage using d3.js",
 
@@ -11,9 +11,9 @@
   ],
 
   "icons": {
-    "32": "icons/icon-32.png",
-    "48": "icons/icon-48.png",
-    "96": "icons/icon-96.png"
+    "32": "icons/web_log32.png",
+    "48": "icons/web_log48.png",
+    "96": "icons/web_log96.png"
   },
 
   "browser_action": {
@@ -28,12 +28,7 @@
     }
   ],
 
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://d3js.org/d3.v4.js; object-src 'self';",
-
-  "options_ui": {
-    "page": "options.html",
-    "browser_style": true
-  },
+  "content_security_policy": "script-src 'self' https://d3js.org/d3.v4.js; object-src 'self';",
 
   "browser_specific_settings": {
     "gecko": {
