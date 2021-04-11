@@ -30,6 +30,11 @@
 
   "content_security_policy": "script-src 'self' https://d3js.org/d3.v4.js; object-src 'self';",
 
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+
   "browser_specific_settings": {
     "gecko": {
       "id": "weblog@wbne.com"

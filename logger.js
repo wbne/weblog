@@ -11,9 +11,7 @@ var urlNames = {}
 var keys = []
 
 if(min == -1) //TEMP CODE TO CLEAR STORAGE WHILE I'M TESTING STUFF
-{
-  browser.storage.sync.set({data: []});
-}
+{browser.storage.sync.set({data: []});}
 
 var result = browser.storage.sync.get("data")
 result.then(loadData, error)
